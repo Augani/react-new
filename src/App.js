@@ -1,25 +1,47 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Grommet, Box, Button, Heading } from 'grommet';
+import { Notification } from 'grommet-icons'
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
+const theme = {
+  global: {
+    colors:{
+      brand: '#228Be6'
+    },
+    font: {
+      family: 'Roboto',
+      size: '14px',
+      height: '20px',
+    },
+  },
+};
+
+
+const AppBar = (props)=>(
+  <Box
+  fill
+  tag='header'
+  direction='row'
+  align='center'
+  justify='between'
+  background='brand'
+  pad={{left: 'medium', right: 'small', vertical: 'small'}}
+  elevation='medium'
+  style={{zIndex: '1'}}
+  {...props}
+  />
+);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <Grommet theme={theme} full>
+   <AppBar>
+        Hello Grommet!
+       </AppBar>
+   </Grommet>
   );
 }
 
