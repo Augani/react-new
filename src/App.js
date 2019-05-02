@@ -1,15 +1,19 @@
-import React from 'react';
-import { Grommet, Box, Button, Heading } from 'grommet';
-import { Notification } from 'grommet-icons'
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Typography from '@material-ui/core/Typography';
-import Container from '@material-ui/core/Container';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import React, { Component } from 'react';import {
+  Box,
+  Button,
+  Collapsible,
+  Heading,
+  Grommet,
+  Layer,
+  ResponsiveContext,
+} from 'grommet';
+import { FormClose, Notification, Menu } from 'grommet-icons';
+
 
 const theme = {
   global: {
-    colors:{
-      brand: '#228Be6'
+    colors: {
+      brand: '#228BE6',
     },
     font: {
       family: 'Roboto',
@@ -19,30 +23,88 @@ const theme = {
   },
 };
 
-
-const AppBar = (props)=>(
+const AppBar = (props) => (
   <Box
-  fill
-  tag='header'
-  direction='row'
-  align='center'
-  justify='between'
-  background='brand'
-  pad={{left: 'medium', right: 'small', vertical: 'small'}}
-  elevation='medium'
-  style={{zIndex: '1'}}
-  {...props}
+    tag='header'
+    direction='row'
+    align='center'
+    justify='between'
+    background='brand'
+    pad={{ left: 'medium', right: 'small', vertical: 'small' }}
+    elevation='medium'
+    style={{ zIndex: '1' }}
+    {...props}
   />
 );
 
-function App() {
-  return (
-   <Grommet theme={theme} full>
-   <AppBar>
-        Hello Grommet!
-       </AppBar>
-   </Grommet>
-  );
+class App extends Component {
+  state = {
+    showSidebar: false,
+  }
+  render(){
+    const { showSidebar } = this.state;
+    return (
+      <Grommet theme={theme} full>
+          <ResponsiveContext.Consumer>
+            {size => (
+              <Box fill>
+                <AppBar>
+                  <Heading level='3' margin='none'>Ejuma</Heading>
+                  <Button
+                    icon={<Menu />}
+                    onClick={() => this.setState({ showSidebar: !this.state.showSidebar })}
+                  />
+                </AppBar>
+                <Box direction='row' flex overflow={{ horizontal: 'hidden' }}>
+                  <Box flex align='center' justify='center'>
+                    
+                  </Box>
+                  {(!showSidebar || size !== 'small') ? (
+                    <Collapsible direction="horizontal" open={showSidebar}>
+                      <Box
+                        flex
+                        width='medium'
+                        background='light-2'
+                        elevation='small'
+                        align='center'
+                        justify='center'
+                      >
+                       
+                      </Box>
+                    </Collapsible>
+                  ): (
+                    <Layer>
+                      <Box
+                        background='light-2'
+                        tag='header'
+                        justify='end'
+                        align='center'
+                        direction='row'
+                      >
+                        <Button
+                          icon={<FormClose />}
+                          onClick={() => this.setState({ showSidebar: false })}
+                        />
+                      </Box>
+                      <Box
+                        fill
+                        background='light-2'
+                        align='center'
+                        justify='center'
+                      >
+                        sidebar
+                      </Box>
+                    </Layer>
+                  )}
+                </Box>
+              </Box>
+            )}
+          </ResponsiveContext.Consumer>
+        </Grommet>
+    );
+
+  }
+ 
 }
 
 export default App;
