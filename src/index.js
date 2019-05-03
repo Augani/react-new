@@ -2,13 +2,33 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { BrowserRouter as Router } from "react-router-dom";
+import { Route, Link, BrowserRouter as Router, Switch } from "react-router-dom";
+import ApplyJob from './components/ApplyJob';
+import Login from './components/Login';
+import Signup from './components/Signup';
+import Index from './components/index';
+import IndexNav from './components/IndexNav'
+
+
+
+
+
+const routing = (
+    <Router>
+      <div>
+          <IndexNav />
+        <Switch>
+        <Route exact path="/" component={Index} />
+        <Route path="/login" component={Login} />
+        <Route path="/signup" component={Signup} />
+        </Switch>
+      </div>
+    </Router>
+  )
 
 
 ReactDOM.render(
-    <Router>
-       <App />
-    </Router>
+    routing
 , document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
