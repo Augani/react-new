@@ -16,9 +16,7 @@ import IndexNav from './components/IndexNav'
 const routing = (
     <Router>
       <div>
-        
         <Switch>
-        
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
         <Route exact path="/" component={Index} />
