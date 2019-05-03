@@ -39,13 +39,13 @@ export class index extends Component {
             <Box height="medium" width="medium" overflow="hidden">
            
                 <Image fit="cover" src={require("../images/undraw_Dest.svg")} />
-                <Heading size={400}>Find work easily when it matters</Heading>
+                <Heading size={300}>Find work easily when it matters</Heading>
               
             </Box>
             </Pane>
             <Pane flex={1} alignItems="center" justifyContent="center" display="flex">
-            <Pane flexDirection="column" flex={1} display="flex" justifyContent="center" alignItems="center">
-            <Heading size={800}>Start earning by joining the family now</Heading>
+            <Pane flexDirection="column" margin={20} flex={1} display="flex" justifyContent="center" alignItems="center">
+            <Heading size={500}>Start earning by joining the family now</Heading>
             <Button marginTop={30} is="a" href="/signup" appearance="default">Signup now</Button>
     
             </Pane>
