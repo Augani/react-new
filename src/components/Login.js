@@ -3,7 +3,7 @@ import { Pane, Button, Heading, TextInputField, TextInput } from "evergreen-ui";
 import IndexNav from './IndexNav';
 import { Box, Carousel, Image } from "grommet";
 
-export class Login extends Component {
+export class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = { height: props.height, loading: false };
