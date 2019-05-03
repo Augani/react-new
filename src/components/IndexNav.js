@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { Pane, Text, Button, Heading } from 'evergreen-ui'
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
 
 export class IndexNav extends Component {
   constructor(props) {
@@ -19,7 +21,7 @@ export class IndexNav extends Component {
       </Pane>
       <Pane>
         {/* Below you can see the marginRight property on a Button. */}
-        <Button appearance="primary" is="a" href={this.props.link} iconBefore="person">{this.props.button}</Button>
+        <Button appearance="primary"  iconBefore="person"><Link to={this.props.link}>{this.props.button}</Link></Button>
       </Pane>
     </Pane>
     )

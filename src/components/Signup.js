@@ -82,6 +82,15 @@ export class Signup extends Component {
              label="Email"
              height={35}
              width={300}
+             type="email"
+             marginBottom={20}
+           />
+           <TextInputField
+             required
+             label="Date of birth"
+             height={35}
+             width={300}
+             type="date"
              marginBottom={20}
            />
  
@@ -114,24 +123,24 @@ export class Signup extends Component {
              );
     }
     return (
-        <Pane height={this.state.height*0.9}>
+        <Pane height={this.state.height*0.9} flex={1}>
         <IndexNav button="Login" link="/login" />
         <Pane width={this.state.width} justifyContent="center" display="flex"> <Heading size={700} >Join Us</Heading></Pane>
        
         <Pane
          display="flex"
-         justifyContent="center"
-         height={this.state.height * 0.7}
          padding={16}
          margin={10}
+         flexDirection="column"
          alignItems="center"
          background="white"
        >
          <Pane
            flexDirection="column"
-           height={this.state.height * 0.7}
            background="white"
            padding={16}
+           height={this.state.height * 0.5}
+           display="flex"
          >
          <TextInputField
              required
@@ -163,29 +172,42 @@ export class Signup extends Component {
              width={300}
              marginBottom={20}
            />
+
+        <TextInputField
+             required
+             label="Date of birth"
+             height={35}
+             width={300}
+             type="date"
+             marginBottom={20}
+           />
+
+        <TextInputField
+             required
+             label="Password"
+             height={35}
+             width={300}
+             type="password"
+             marginBottom={20}
+           />
+          
  
           <TextInputField
              required
              type="password"
-             label="Password"
-             height={300}
-             
-           />
-            <TextInputField
-             required
-             type="password"
              label="Confirm Password"
              height={300}
-              
+             marginBottom={20}
            />
-           <Pane justifyContent="center" display="flex">
-           <Button isActive={this.state.loading} onClick={this.Signup}>
+    
+    
+         </Pane>
+         <Pane justifyContent="center" display="flex">
+           <Button onClick={this.Signup}>
              Signup
            </Button>
            </Pane>
- 
-          
-         </Pane>
+         
        </Pane>
    
        </Pane>
