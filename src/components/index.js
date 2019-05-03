@@ -26,7 +26,7 @@ export class index extends Component {
         <Pane flex={1} alignItems="center" justifyContent="center" display="flex">
         <Pane flexDirection="column" flex={1} display="flex" justifyContent="center" alignItems="center">
         <Heading size={800}>Start earning by joining the family now</Heading>
-        <Button marginTop={30} appearance="secondary">Signup now</Button>
+        <Button marginTop={30} is="a" href="/signup" appearance="secondary">Signup now</Button>
 
         </Pane>
         </Pane>

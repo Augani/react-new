@@ -19,7 +19,7 @@ export class IndexNav extends Component {
       </Pane>
       <Pane>
         {/* Below you can see the marginRight property on a Button. */}
-        <Button appearance="primary">Login</Button>
+        <Button appearance="primary" is="a" href="/login" iconBefore="person">Login</Button>
       </Pane>
     </Pane>
     )
