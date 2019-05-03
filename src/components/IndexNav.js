@@ -13,13 +13,13 @@ export class IndexNav extends Component {
 
   render() {
     return (
-      <Pane elevation={3} display="flex" padding={16} background="tint2" width={this.state.width}  margin={20} borderRadius={3}>
+      <Pane elevation={3} display="flex" padding={16} background="tint2"  margin={20} borderRadius={3}>
       <Pane flex={1} alignItems="center" display="flex">
         <Heading size={600}>Ejuma</Heading>
       </Pane>
       <Pane>
         {/* Below you can see the marginRight property on a Button. */}
-        <Button appearance="primary" is="a" href="/login" iconBefore="person">Login</Button>
+        <Button appearance="primary" is="a" href={this.props.link} iconBefore="person">{this.props.button}</Button>
       </Pane>
     </Pane>
     )
