@@ -16,16 +16,7 @@ export class index extends Component {
       }
     
      
-      
-    //   // make sure to remove the listener
-    //   // when the component is not mounted anymore
-    //   componentWillUnmount() {
-    //     window.removeEventListener('resize', this.handleWindowSizeChange);
-    //   }
-      
-    //   handleWindowSizeChange = () => {
-    //     this.setState({ width: window.innerWidth });
-    //   };
+     
 
   render() {
     const { width } = this.state;
@@ -35,15 +26,19 @@ export class index extends Component {
             <Pane height={this.state.height * 0.9}>
             <IndexNav button="login" link="/login" />
             <Pane elevation={1} display="flex"  height={this.state.height * 0.8} flexDirection="column" padding={16} background="white"  margin={10} borderRadius={3}>
-            <Pane flex={1} alignItems="center" justifyContent="center" margin={10} >
+            <Pane flex={1} display="flex" alignItems="center" justifyContent="center" margin={10} flexDirection="column" >
             <Box height="medium" width="medium" overflow="hidden">
            
                 <Image fit="cover" src={require("../images/undraw_Dest.svg")} />
-                <Heading size={300}>Find work easily when it matters</Heading>
+               
               
             </Box>
+            <Pane display="flex" justifyContent="center">
+            <Heading size={300}>Find work easily when it matters</Heading>
             </Pane>
-            <Pane flex={1} alignItems="center" justifyContent="center" display="flex">
+           
+            </Pane>
+            <Pane flex={1}  display="flex" alignItems="center" justifyContent="center" >
             <Pane flexDirection="column" margin={20} flex={1} display="flex" justifyContent="center" alignItems="center">
             <Heading size={500}>Start earning by joining the family now</Heading>
             <Button marginTop={30} is="a" href="/signup" appearance="default">Signup now</Button>
