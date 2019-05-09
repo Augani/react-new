@@ -14,6 +14,14 @@ export class IndexNav extends Component {
   }
 
   render() {
+    let nav;
+    if(this.props.home){
+      nav = <Button appearance="minimal" onClick={this.logout} iconBefore="logout">Logout</Button>;
+
+    }else{
+      nav = <Button appearance="minimal" is="a" href={this.props.link}  iconBefore="person">{this.props.button}</Button>;
+
+    }
     return (
       <Pane elevation={3} display="flex" padding={16} background="tint2"  margin={20} borderRadius={3}>
       <Pane flex={1} alignItems="center" display="flex">
@@ -21,7 +29,7 @@ export class IndexNav extends Component {
       </Pane>
       <Pane>
         {/* Below you can see the marginRight property on a Button. */}
-        <Button appearance="primary"  iconBefore="person"><Link to={this.props.link}>{this.props.button}</Link></Button>
+        {nav}
       </Pane>
     </Pane>
     )

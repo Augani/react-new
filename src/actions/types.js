@@ -1,0 +1,17 @@
+export const LOGIN = "LOGIN";
+export const LOGOUT = "LOGOUT";
+export const POSTJOB = "POSTJOB";
+export const APPLY_TO_JOB = "APPLY_TO_JOB";
+export const RESET_PASSWORD = "RESET_PASSWORD";
+export const UPDATE_PROFILE = "UPDATE_PROFILE";
+export const DEPOSIT_MONEY = "DEPOSIT_MONEY";
+export const WITHDRAW_MONEY = "WITHDRAW_MONEY";
+export const GET_JOBS = "GET_JOBS";
+export const SEND_MESSAGE = "SEND_MESSAGE";
+export const GET_MESSAGES = "GET_MESSAGES";
+export const EDIT_JOB = "EDIT_JOB";
+export const UPDATE_APPLICATION = "EDIT_APPLICATION";
+export const DELETE_APPLICATION = "DELETE_APPLICATION";
+export const DELETE_JOB = "DELETE_JOB";
+export const VIEW_POSTED_JOBS = "VIEW_POSTED_JOBS";
+export const GET_APPLICATIONS = "GET_APPLICATIONS";

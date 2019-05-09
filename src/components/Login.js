@@ -34,49 +34,52 @@ export class Login extends React.Component {
 
     if(isMobile){
         return (
-            <Pane display="flex" height={this.state.height * 0.9} flex={1}>
-             <IndexNav />
-             <Pane width={this.state.width} justifyContent="center" display="flex"> <Heading size={700} >Welcome back</Heading></Pane>
+            <Pane display="flex" flexDirection="column" height={this.state.height * 0.9} flex={1}>
+             <IndexNav link="/signup" button="Signup" />
 
              <Pane
               display="flex"
               justifyContent="center"
               height={this.state.height * 0.7}
+              maxHeight={this.state.width}
               padding={16}
-              
+              flexDirection="column"
               alignItems="center"
               background="white"
             >
-              <Pane
-                flexDirection="column"
-                height={this.state.height * 0.7}
-                background="white"
-                padding={16}
-              >
-               
-                <TextInputField
-                  required
-                  label="Email"
-                  height={35}
-                  width={300}
-                  marginBottom={20}
-                />
-      
-                <TextInputField
-                  required
-                  type="password"
-                  label="Password"
-                  height={300}
-                  
-                />
-                <Pane justifyContent="center">
-                <Button isActive={this.state.loading} onClick={this.login}>
-                  Login
-                </Button>
-                </Pane>
-      
-               
-              </Pane>
+
+               <Pane
+           flexDirection="column"
+           height={this.state.height * 0.3}
+           background="white"
+           padding={16}
+         >
+         
+         
+        <TextInputField
+             required
+             label="Email"
+             height={35}
+             width={300}
+             marginBottom={20}
+           />
+ 
+           <TextInputField
+             required
+             type="password"
+             label="Password"
+             height={300}
+             
+           />
+          
+ 
+          
+         </Pane>
+         <Pane justifyContent="center" >
+           <Button isActive={this.state.loading} onClick={this.login}>
+             Login
+           </Button>
+           </Pane>
             </Pane>
         
             </Pane>
@@ -116,17 +119,19 @@ export class Login extends React.Component {
              required
              type="password"
              label="Password"
-             height={300}
+             height={35}
+             width={300}
              
            />
-           <Pane justifyContent="center">
+          
+ 
+          
+         </Pane>
+         <Pane justifyContent="center" display="flex" alignItems="center">
            <Button isActive={this.state.loading} onClick={this.login}>
              Login
            </Button>
            </Pane>
- 
-          
-         </Pane>
        </Pane>
    
        </Pane>

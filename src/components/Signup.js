@@ -35,14 +35,15 @@ export class Signup extends Component {
 
     if(isMobile){
         return (
-            <Pane display="flex" height={this.state.height * 0.9} flex={1}>
-             <IndexNav />
+            <Pane display="flex" flexDirection="column" height={this.state.height * 0.9} flex={1}>
+             <IndexNav link="/login" button="Login" />
              <Pane width={this.state.width} justifyContent="center" display="flex"> <Heading size={700} >Join Us</Heading></Pane>
 
              <Pane
               display="flex"
               justifyContent="center"
               height={this.state.height * 0.7}
+              maxHeight={this.state.width}
               padding={16}
               
               alignItems="center"
@@ -98,17 +99,19 @@ export class Signup extends Component {
              required
              type="password"
              label="Password"
-             height={300}
+             width={300}
+             height={35}
              
            />
             <TextInputField
              required
              type="password"
              label="Confirm Password"
-             height={300}
+             height={35}
+             width={300}
               
            />
-           <Pane justifyContent="center" display="flex">
+           <Pane justifyContent="center" marginTop={20} display="flex">
            <Button isActive={this.state.loading} onClick={this.Signup}>
              Signup
            </Button>
@@ -132,14 +135,15 @@ export class Signup extends Component {
          padding={16}
          margin={10}
          flexDirection="column"
-         alignItems="center"
          background="white"
        >
          <Pane
            flexDirection="column"
            background="white"
            padding={16}
-           height={this.state.height * 0.5}
+           alignItems="center"
+           justifyContent="center"
+           height={this.state.height * 0.6}
            display="flex"
          >
          <TextInputField
@@ -181,6 +185,7 @@ export class Signup extends Component {
              type="date"
              marginBottom={20}
            />
+           
 
         <TextInputField
              required
@@ -190,16 +195,17 @@ export class Signup extends Component {
              type="password"
              marginBottom={20}
            />
-          
- 
-          <TextInputField
+            <TextInputField
              required
              type="password"
              label="Confirm Password"
-             height={300}
+             height={35}
+             width={300}
              marginBottom={20}
            />
-    
+          
+ 
+         
     
          </Pane>
          <Pane justifyContent="center" display="flex">
