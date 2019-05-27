@@ -35,10 +35,10 @@ export class MapContainer extends Component {
         return null;
       }
     return (
-      <Pane display="flex" flex={1}>
+      <Pane>
  <Map
         google={this.props.google}
-       style={{width: '75%', height: '70%'}}
+       style={{width: '90%', height: '90%'}}
         initialCenter={userLocation} zoom={15}
 
       />

@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Pane, Button, Heading } from 'evergreen-ui';
 import {Box, Carousel, Image} from 'grommet'
 import IndexNav from './IndexNav';
+import { withRouter } from 'react-router-dom'
+import { connect} from 'react-redux'
 
 export class index extends Component {
     constructor(props) {
@@ -79,4 +81,4 @@ export class index extends Component {
   }
 }
 
-export default index
+export default withRouter(connect()(index))
