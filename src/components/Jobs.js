@@ -76,6 +76,9 @@ import { connect } from "react-redux";
   render() {
     const { width, postedJobs, isShown } = this.state;
     const isMobile = width <= 500;
+    if(!this.props.auth.loggedIn){
+      return <Redirect to="/login"/>
+    }
     if (isMobile) {
       return (
         <Pane display="flex" flex={1} flexDirection="column">

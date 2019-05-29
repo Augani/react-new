@@ -20,7 +20,7 @@ export class Signup extends Component {
           password:'',
           email:'',
           confirmpassword: '',
-          url: "https://afternoon-sea-88494.herokuapp.com/api/auth/register"
+          
          };
       }
 

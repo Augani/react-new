@@ -70,6 +70,9 @@ export class Settings extends Component {
   }
   render() {
     const {height, width} = this.state;
+    if(!this.props.auth.loggedIn || this.props.auth.loggedIn){
+      return <Redirect to="/login"/>
+    }
     return (
       <Pane display="flex" flexDirection="row" height={height} width={width}>
       <Pane flexDirection="column" display="flex" width={width*0.1} height={height}>
